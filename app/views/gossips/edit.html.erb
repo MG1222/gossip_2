@@ -1,0 +1,23 @@
+  <div class="card-body">
+  	<h4>Modifier Gossip</h4>
+
+    <%= form_tag gossip_path, method: "patch", class: "form-group" do %>
+      <div class="form-group form-check">
+        <%= label_tag 'Titre' %>
+        <%= text_field_tag 'title', @gossip.title, class: "form-control" %>
+      </div>
+      <div class="form-group form-check">
+        <%= label_tag 'Author' %>
+        <%= text_field_tag 'author', @gossip.user.first_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group form-check">
+        <%= label_tag 'Contenu' %>
+        <%= text_area_tag 'content', @gossip.content, rows: 5, class: "form-control" %>
+      </div>
+
+    <%= submit_tag "Modifier", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+ <%= link_to 'Déjà un compte ? Se connecter', new_session_path, class: 'blue_link' %>

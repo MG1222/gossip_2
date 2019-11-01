@@ -1,0 +1,14 @@
+<!-- home -->
+<div class="d-flex flex-wrap justify-content-around mx-4">
+  <% @gossips.each do |gossip| %>
+    <div class="card m-4" style="width: 18rem;">
+      <div class="card-body"><center>
+        <h5 class="card-title"><%= gossip.id %>. <%= gossip.title %></h5>
+        <p class="card-text"><%= @users.find(gossip.user_id).first_name %></p>
+       	<a href= "<%= author_path(gossip.user_id) %>">plus sur author ..</a><br />
+
+      </div>
+  </center>
+    </div>
+  <% end %>
+</div>
